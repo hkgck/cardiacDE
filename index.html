@@ -7,6 +7,29 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="apple-mobile-web-app-title" content="CardiacDE">
     <title>Cardiac Drugs and Equipment</title>
+
+    <!-- ❤️ Browser tab favicon -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>❤️</text></svg>">
+
+    <!-- ❤️ iPhone home screen icon -->
+    <script>
+    (function(){
+        var c=document.createElement('canvas');
+        c.width=180;c.height=180;
+        var ctx=c.getContext('2d');
+        ctx.fillStyle='#FFFFFF';
+        ctx.fillRect(0,0,180,180);
+        ctx.font='140px serif';
+        ctx.textAlign='center';
+        ctx.textBaseline='middle';
+        ctx.fillText('❤️',90,96);
+        var link=document.createElement('link');
+        link.rel='apple-touch-icon';
+        link.href=c.toDataURL('image/png');
+        document.head.appendChild(link);
+    })();
+    </script>
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
     <style>
         *{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent}
@@ -172,15 +195,11 @@
         .empty p{font-size:15px;line-height:1.5}
         .reset-sec{margin-top:20px;padding-top:20px;border-top:0.5px solid var(--border)}
         .reset-hint{font-size:12px;color:var(--text2);text-align:center;margin-top:8px;font-style:italic}
-
-        /* ── FOOTER INFO ── */
         .master-footer{margin-top:28px;padding:16px;text-align:center}
         .mf-credit{font-size:11px;color:var(--text2);font-style:italic;margin-bottom:12px}
         .mf-dates{font-size:11px;color:var(--text2);line-height:1.8}
         .mf-dates span{display:block}
         .mf-label{font-weight:600;color:#AEAEB2}
-
-        /* ── PASSWORD OVERLAY ── */
         .pw-o{position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,0.5);z-index:260;display:none;align-items:center;justify-content:center;padding:20px}
         .pw-o.act{display:flex}
         .pw-box{background:var(--card);border-radius:16px;width:100%;max-width:300px;padding:24px 20px;text-align:center}
@@ -209,21 +228,7 @@
 <div class="mo" id="mo"><div class="modal" id="mdl"><h2 id="mt"></h2><div id="mbdy"></div><div class="mb"><button class="btn btn-c" onclick="cModal()">Cancel</button><button class="btn btn-p" id="msave">Save</button></div></div></div>
 <div class="co" id="co"><div class="cd"><div class="cd-body"><div class="cd-title" id="cot"></div><div class="cd-msg" id="com"></div></div><div class="cd-actions"><button onclick="cConf()">Cancel</button><button class="cdng" id="coa"></button></div></div></div>
 <div class="ip-o" id="ipo"><button class="close-p" onclick="cImg()">✕</button><img id="pimg" src=""><div class="pa"><button class="btn btn-p" onclick="dlImg()">💾 Save Image</button></div><p class="hint">Long-press image to save on iPhone</p></div>
-
-<!-- PASSWORD OVERLAY -->
-<div class="pw-o" id="pwo">
-    <div class="pw-box">
-        <h3>🔒 Master Mode</h3>
-        <div class="pw-sub">Enter password to access</div>
-        <input type="password" id="pw-in" inputmode="text" autocomplete="off" placeholder="••••••••">
-        <div class="pw-err" id="pw-err"></div>
-        <div class="pw-btns">
-            <button class="btn btn-c" onclick="cancelPw()">Cancel</button>
-            <button class="btn btn-p" onclick="submitPw()">Unlock</button>
-        </div>
-    </div>
-</div>
-
+<div class="pw-o" id="pwo"><div class="pw-box"><h3>🔒 Master Mode</h3><div class="pw-sub">Enter password to access</div><input type="password" id="pw-in" inputmode="text" autocomplete="off" placeholder="••••••••"><div class="pw-err" id="pw-err"></div><div class="pw-btns"><button class="btn btn-c" onclick="cancelPw()">Cancel</button><button class="btn btn-p" onclick="submitPw()">Unlock</button></div></div></div>
 <div class="toast" id="toast"></div>
 <input type="file" id="imp-file" accept=".txt,.json,.meddilute">
 <div id="png-src"></div>
@@ -235,7 +240,6 @@ const APP_VERSION_DATE='2026-05-29';
 const MASTER_PW='ffff1111';
 const AUTH_DURATION=30*60*1000;
 const AUTH_KEY='cde_auth_ts';
-
 const PRESETS=['#FFD6D6','#FFDAB3','#FFF3B0','#D4F5D4','#D4EDFF','#E8D5F5','#FFE0F0','#D6F5F5','#F0E0C8','#E0E0E0','#FF8A80','#FFAB76','#FFE066','#81C784','#64B5F6','#CE93D8','#F48FB1','#4DD0E1','#D7A86E','#BDBDBD'];
 const DCC='#FFFFFF',EV=5;
 const VALID_HEADERS=['## Cardiac Drugs and Equipment Backup ##','## MedDilute Backup File ##'];
@@ -246,7 +250,6 @@ function tcf(h){return lum(h)>0.55?'#1C1C1E':'#FFFFFF';}
 function dk(h,a){const c=hexRgb(h),f=1-a;return'#'+[Math.round(c.r*f),Math.round(c.g*f),Math.round(c.b*f)].map(x=>x.toString(16).padStart(2,'0')).join('');}
 function fmtDate(iso){if(!iso)return'Never';const d=new Date(iso);return d.toLocaleDateString('en-US',{year:'numeric',month:'short',day:'numeric'})+', '+d.toLocaleTimeString('en-US',{hour:'numeric',minute:'2-digit'});}
 
-// ═══════ PASSWORD ═══════
 function isAuthed(){const ts=localStorage.getItem(AUTH_KEY);if(!ts)return false;return(Date.now()-parseInt(ts))<AUTH_DURATION;}
 function setAuthed(){localStorage.setItem(AUTH_KEY,Date.now().toString());}
 function showPw(){document.getElementById('pwo').classList.add('act');document.getElementById('pw-in').value='';document.getElementById('pw-err').textContent='';setTimeout(()=>document.getElementById('pw-in').focus(),300);}
@@ -272,7 +275,6 @@ let D,sel=new Set(),eqSel={},expCats=new Set(),expEqCats=new Set(),modalCb=null,
 function init(){loadD();loadSel();loadEqSel();r1();r2();r3();r4();uBadge();document.getElementById('imp-file').addEventListener('change',handleImport);}
 function loadD(){let s=localStorage.getItem('cde_data');if(!s)s=localStorage.getItem('md_data');D=s?JSON.parse(s):JSON.parse(JSON.stringify(DEF));D.cats.forEach(c=>{if(!c.color)c.color=DCC;});if(!D.equip)D.equip=[];D.equip.forEach(c=>{if(!c.color)c.color=DCC;(c.items||[]).forEach(it=>{if(!it.opts)it.opts=[];});});if(!D.nCat)D.nCat=mxId('c')+1;if(!D.nDrug)D.nDrug=mxId('d')+1;if(!D.nEqCat)D.nEqCat=mxId('ec')+1;if(!D.nEqItem)D.nEqItem=mxId('ei')+1;if(!D.contentUpdated)D.contentUpdated=new Date().toISOString();saveD();}
 function saveD(){localStorage.setItem('cde_data',JSON.stringify(D));}
-// Call touchD() instead of saveD() when content is modified
 function touchD(){D.contentUpdated=new Date().toISOString();saveD();}
 function loadSel(){let s=localStorage.getItem('cde_sel');if(!s)s=localStorage.getItem('md_sel');if(s){sel=new Set(JSON.parse(s));const v=new Set();D.cats.forEach(c=>c.drugs.forEach(d=>v.add(d.id)));sel=new Set([...sel].filter(x=>v.has(x)));}}
 function saveSel(){localStorage.setItem('cde_sel',JSON.stringify([...sel]));}
@@ -288,12 +290,7 @@ function toast(msg,dur){const t=document.getElementById('toast');t.textContent=m
 const titles=['Select Drugs','Select Equipment','Summary','Master Mode'];
 const subs=['Tap a category, then tick drugs','Tap options to select equipment','Selected drugs & equipment','Edit drugs, equipment & settings'];
 function doGoMaster(){['p1','p2','p3','p4'].forEach((id,j)=>{document.getElementById(id).classList.toggle('active',j===3);document.querySelectorAll('.tab')[j].classList.toggle('active',j===3);});document.getElementById('h-title').textContent=titles[3];document.getElementById('h-sub').textContent=subs[3];document.getElementById('sbadge').classList.remove('vis');r4();}
-function go(i){
-    if(i===3&&!isAuthed()){showPw();return;}
-    ['p1','p2','p3','p4'].forEach((id,j)=>{document.getElementById(id).classList.toggle('active',i===j);document.querySelectorAll('.tab')[j].classList.toggle('active',i===j);});
-    document.getElementById('h-title').textContent=titles[i];document.getElementById('h-sub').textContent=subs[i];
-    if(i===2)r3();if(i===3)r4();if(i<=1)uBadge();else document.getElementById('sbadge').classList.remove('vis');if(i!==3&&reorderMode){reorderMode=false;}
-}
+function go(i){if(i===3&&!isAuthed()){showPw();return;}['p1','p2','p3','p4'].forEach((id,j)=>{document.getElementById(id).classList.toggle('active',i===j);document.querySelectorAll('.tab')[j].classList.toggle('active',i===j);});document.getElementById('h-title').textContent=titles[i];document.getElementById('h-sub').textContent=subs[i];if(i===2)r3();if(i===3)r4();if(i<=1)uBadge();else document.getElementById('sbadge').classList.remove('vis');if(i!==3&&reorderMode){reorderMode=false;}}
 
 function r1(){const c=document.getElementById('p1c');if(!D.cats.length){c.innerHTML='<div class="empty"><div class="ei">📦</div><p>No drug categories yet.<br>Go to Master to add some.</p></div>';return;}let h='';if(sel.size)h+=`<div style="text-align:right;margin-bottom:10px"><button class="clear-btn" onclick="clrAll()">✕ Clear All (${sel.size})</button></div>`;D.cats.forEach(cat=>{const cnt=cat.drugs.filter(d=>sel.has(d.id)).length,ex=expCats.has(cat.id),bg=cat.color||DCC,tc=tcf(bg),bd=dk(bg,0.1);h+=`<div class="card" style="background:${bg}"><div class="cat-hdr${ex?' exp':''}" onclick="togCat(${cat.id})" style="color:${tc}"><span class="chv" style="color:${tc}">▶</span><span class="cn">${esc(cat.name)}</span><span class="badge ${cnt?'badge-on':'badge-off'}">${cnt?cnt+'/'+cat.drugs.length:cat.drugs.length}</span></div><div class="cat-body${ex?' exp':''}" style="border-top-color:${bd}">${cat.drugs.map(d=>`<div class="drug-row" style="border-bottom-color:${bd}"><label class="cb-wrap"><input type="checkbox" ${sel.has(d.id)?'checked':''} onchange="togD(${d.id})"><span class="cb-mark"></span></label><span class="dn" style="color:${tc}">${esc(d.name)}</span></div>`).join('')}</div></div>`;});c.innerHTML=h;}
 function togCat(id){expCats.has(id)?expCats.delete(id):expCats.add(id);r1();}
@@ -308,12 +305,8 @@ function uBadge(){const b=document.getElementById('sbadge'),tot=sel.size+eqCnt()
 
 function r3(){const c=document.getElementById('p3c');const hd=sel.size>0;let he=false;D.equip.forEach(cat=>{cat.items.forEach(it=>{if(eqSel[it.id]&&eqSel[it.id].size>0)he=true;});});if(!hd&&!he){c.innerHTML='<div class="empty"><div class="ei">📋</div><p>Nothing selected yet.<br>Go to Drugs or Equipment tabs.</p></div>';return;}let h='';if(hd){h+=`<div class="sum-sec-hdr">💊 Drugs</div>`;D.cats.forEach(cat=>{const ds=cat.drugs.filter(d=>sel.has(d.id));if(!ds.length)return;const bg=cat.color||DCC,tc=tcf(bg),bd=dk(bg,0.08);h+=`<div class="s-cat-card" style="background:${bg}"><div class="s-cat-label" style="color:${tc}">${esc(cat.name)}</div>${ds.map(d=>`<div class="s-drug" style="border-top-color:${bd}"><div class="sd-n" style="color:${tc}">${esc(d.name)}</div><div class="sd-d" style="color:${tc};opacity:0.7">${esc(d.dil)}</div></div>`).join('')}</div>`;});}if(he){h+=`<div class="sum-sec-hdr">🔧 Equipment</div>`;D.equip.forEach(cat=>{const its=cat.items.filter(it=>eqSel[it.id]&&eqSel[it.id].size>0);if(!its.length)return;const bg=cat.color||DCC,tc=tcf(bg),bd=dk(bg,0.08);h+=`<div class="s-cat-card" style="background:${bg}"><div class="s-cat-label" style="color:${tc}">${esc(cat.name)}</div>${its.map(it=>`<div class="s-drug" style="border-top-color:${bd}"><div class="sd-n" style="color:${tc}">${esc(it.name)}</div><div class="sd-d" style="color:${tc};opacity:0.7">${[...eqSel[it.id]].join(', ')}</div></div>`).join('')}</div>`;});}h+=`<button class="btn btn-p gen-btn" onclick="genPNG()">📸 Generate Reference Card</button>`;h+=`<div class="credit">${esc(CREDIT)}</div>`;c.innerHTML=h;}
 
-// ═══════ PAGE 4 ═══════
 function switchMS(s){masterSec=s;reorderMode=false;r4();}
-function r4(){const c=document.getElementById('p4c');let h=`<div class="seg-ctrl"><button class="seg-btn ${masterSec==='drugs'?'active':''}" onclick="switchMS('drugs')">💊 Drugs</button><button class="seg-btn ${masterSec==='equip'?'active':''}" onclick="switchMS('equip')">🔧 Equipment</button></div>`;if(masterSec==='drugs'){h+=reorderMode?roDrugs():mDrugs();}else{h+=reorderMode?roEquip():mEquip();}h+=`<div class="ie-section"><div class="ie-title">📦 Backup & Restore</div><div class="ie-desc"><b>Export</b> saves everything to a text file.<br><b>Import</b> deletes all existing data, then restores from file.</div><div class="ie-btns"><button class="btn btn-p" onclick="doExport()">📤 Export</button><button class="btn btn-o" onclick="doImportClick()">📥 Import</button></div></div>`;h+=`<div class="reset-sec"><button class="btn btn-d" onclick="resetAll()">🔄 Reset to Default Data</button><p class="reset-hint">Erases all changes & restores sample data</p></div>`;
-// Footer
-h+=`<div class="master-footer"><div class="mf-credit">${esc(CREDIT)}</div><div class="mf-dates"><span><span class="mf-label">App version:</span> ${APP_VERSION_DATE}</span><span><span class="mf-label">Library last updated:</span> ${fmtDate(D.contentUpdated)}</span></div></div>`;
-c.innerHTML=h;}
+function r4(){const c=document.getElementById('p4c');let h=`<div class="seg-ctrl"><button class="seg-btn ${masterSec==='drugs'?'active':''}" onclick="switchMS('drugs')">💊 Drugs</button><button class="seg-btn ${masterSec==='equip'?'active':''}" onclick="switchMS('equip')">🔧 Equipment</button></div>`;if(masterSec==='drugs'){h+=reorderMode?roDrugs():mDrugs();}else{h+=reorderMode?roEquip():mEquip();}h+=`<div class="ie-section"><div class="ie-title">📦 Backup & Restore</div><div class="ie-desc"><b>Export</b> saves everything to a text file.<br><b>Import</b> deletes all existing data, then restores from file.</div><div class="ie-btns"><button class="btn btn-p" onclick="doExport()">📤 Export</button><button class="btn btn-o" onclick="doImportClick()">📥 Import</button></div></div>`;h+=`<div class="reset-sec"><button class="btn btn-d" onclick="resetAll()">🔄 Reset to Default Data</button><p class="reset-hint">Erases all changes & restores sample data</p></div>`;h+=`<div class="master-footer"><div class="mf-credit">${esc(CREDIT)}</div><div class="mf-dates"><span><span class="mf-label">App version:</span> ${APP_VERSION_DATE}</span><span><span class="mf-label">Library last updated:</span> ${fmtDate(D.contentUpdated)}</span></div></div>`;c.innerHTML=h;}
 
 function mDrugs(){let h=`<div class="top-bar-row"><button class="btn-add" onclick="addCat()">＋ Add Category</button><button class="btn-ro" onclick="toggleReorder()">↕️ Reorder</button></div>`;if(!D.cats.length)h+='<div class="empty"><div class="ei">💊</div><p>No drug categories yet.</p></div>';D.cats.forEach(cat=>{const bg=cat.color||DCC,tc=tcf(bg),bd=dk(bg,0.08);h+=`<div class="card" style="background:${bg}"><div class="m-cat-hdr" style="border-bottom-color:${bd}"><span class="cn" style="color:${tc}">${esc(cat.name)}</span><div class="m-actions"><button class="ib" onclick="pickColor('drug',${cat.id})">🎨</button><button class="ib" onclick="editCat(${cat.id})">✏️</button><button class="ib" onclick="delCat(${cat.id})">🗑️</button></div></div>`;cat.drugs.forEach(d=>{h+=`<div class="m-drug" style="border-bottom-color:${bd}"><div class="m-drug-info"><div class="n" style="color:${tc}">${esc(d.name)}</div><div class="d" style="color:${tc};opacity:0.6">${esc(d.dil)}</div></div><div class="m-actions"><button class="ib" onclick="editDrug(${cat.id},${d.id})">✏️</button><button class="ib" onclick="delDrug(${cat.id},${d.id})">🗑️</button></div></div>`;});h+=`<button class="add-d-btn" onclick="addDrug(${cat.id})" style="border-top-color:${bd};color:${tc}">＋ Add Drug</button></div>`;});return h;}
 function mEquip(){let h=`<div class="top-bar-row"><button class="btn-add" onclick="addEqCat()">＋ Add Category</button><button class="btn-ro" onclick="toggleReorder()">↕️ Reorder</button></div>`;if(!D.equip.length)h+='<div class="empty"><div class="ei">🔧</div><p>No equipment categories yet.</p></div>';D.equip.forEach(cat=>{const bg=cat.color||DCC,tc=tcf(bg),bd=dk(bg,0.08);h+=`<div class="card" style="background:${bg}"><div class="m-cat-hdr" style="border-bottom-color:${bd}"><span class="cn" style="color:${tc}">${esc(cat.name)}</span><div class="m-actions"><button class="ib" onclick="pickColor('equip',${cat.id})">🎨</button><button class="ib" onclick="editEqCat(${cat.id})">✏️</button><button class="ib" onclick="delEqCat(${cat.id})">🗑️</button></div></div>`;cat.items.forEach(it=>{h+=`<div class="m-drug" style="border-bottom-color:${bd}"><div class="m-drug-info"><div class="n" style="color:${tc}">${esc(it.name)}</div><div class="m-eq-opts">${it.opts.map(o=>`<span class="m-eq-pill" style="color:${tc}">${esc(o)}</span>`).join('')}</div></div><div class="m-actions"><button class="ib" onclick="editEqItem(${cat.id},${it.id})">✏️</button><button class="ib" onclick="delEqItem(${cat.id},${it.id})">🗑️</button></div></div>`;});h+=`<button class="add-d-btn" onclick="addEqItem(${cat.id})" style="border-top-color:${bd};color:${tc}">＋ Add Item</button></div>`;});return h;}
