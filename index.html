@@ -69,7 +69,6 @@
         .s-drug:first-of-type{border-top:none}
         .s-drug .sd-n{font-size:15px;font-weight:600}
         .s-drug .sd-d{font-size:13px;margin-top:4px;line-height:1.4}
-
         .credit{text-align:center;padding:24px 16px 8px;font-size:11px;color:var(--text2);line-height:1.5;font-style:italic}
 
         .seg-ctrl{display:flex;background:rgba(0,0,0,0.06);border-radius:9px;padding:2px;margin-bottom:14px}
@@ -91,30 +90,32 @@
         .add-d-btn{display:flex;align-items:center;justify-content:center;padding:10px;color:var(--primary);font-size:14px;font-weight:600;cursor:pointer;background:none;border:none;border-top:0.5px solid rgba(0,0,0,0.08);width:100%;font-family:inherit}
         .add-d-btn:active{background:rgba(0,0,0,0.04)}
 
-        .top-bar-row{display:flex;gap:8px;margin-bottom:14px}
-        .top-bar-row .btn{font-size:14px;padding:13px 10px}
-        .top-bar-row .btn-reorder{background:var(--card);color:var(--primary);border:1.5px solid var(--primary);flex:0 0 auto;padding:13px 16px}
+        /* ── COMPACT TOP BAR ── */
+        .top-bar-row{display:flex;gap:8px;margin-bottom:10px;height:44px}
+        .top-bar-row .btn-add{flex:1;min-width:0;padding:0 14px;border:none;border-radius:10px;font-size:14px;font-weight:600;cursor:pointer;font-family:inherit;display:flex;align-items:center;justify-content:center;white-space:nowrap;background:var(--success);color:#fff}
+        .top-bar-row .btn-add:active{opacity:.7}
+        .top-bar-row .btn-ro{flex:0 0 auto;padding:0 14px;border:1.5px solid var(--primary);border-radius:10px;font-size:13px;font-weight:600;cursor:pointer;font-family:inherit;display:flex;align-items:center;justify-content:center;white-space:nowrap;background:var(--card);color:var(--primary)}
+        .top-bar-row .btn-ro:active{opacity:.7}
 
-        /* ── COMPACT REORDER MODE ── */
-        .reorder-banner{background:var(--primary-light);border:1.5px solid var(--primary);border-radius:10px;padding:10px 14px;margin-bottom:12px;display:flex;align-items:center;gap:8px}
-        .reorder-banner .rb-icon{font-size:18px;flex-shrink:0}
-        .reorder-banner .rb-text{font-size:12px;color:var(--primary);line-height:1.3;font-weight:500;flex:1}
-        .reorder-banner .rb-done{background:var(--primary);color:#fff;border:none;border-radius:8px;padding:7px 14px;font-size:12px;font-weight:700;cursor:pointer;font-family:inherit;flex-shrink:0}
+        /* ── COMPACT REORDER ── */
+        .reorder-banner{background:var(--primary-light);border:1.5px solid var(--primary);border-radius:10px;padding:8px 12px;margin-bottom:10px;display:flex;align-items:center;gap:8px;height:44px}
+        .reorder-banner .rb-text{font-size:12px;color:var(--primary);font-weight:500;flex:1}
+        .reorder-banner .rb-done{background:var(--primary);color:#fff;border:none;border-radius:8px;padding:6px 14px;font-size:12px;font-weight:700;cursor:pointer;font-family:inherit;flex-shrink:0}
 
-        .ro-cat-row{display:flex;align-items:center;padding:10px 10px 10px 12px}
-        .ro-cat-row .ro-grip{font-size:14px;margin-right:8px;flex-shrink:0;opacity:0.4}
+        .ro-cat-row{display:flex;align-items:center;padding:9px 10px 9px 12px}
+        .ro-cat-row .ro-grip{font-size:13px;margin-right:6px;flex-shrink:0;opacity:0.35}
         .ro-cat-row .cn{flex:1;font-size:14px;font-weight:600;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
         .ro-arrows{display:flex;gap:4px;flex-shrink:0}
-        .arr{border:none;border-radius:8px;cursor:pointer;display:flex;align-items:center;justify-content:center;font-weight:700;transition:all .1s;font-family:inherit;background:rgba(0,122,255,0.1);color:var(--primary)}
+        .arr{border:none;border-radius:7px;cursor:pointer;display:flex;align-items:center;justify-content:center;font-weight:700;transition:all .1s;font-family:inherit;background:rgba(0,122,255,0.1);color:var(--primary)}
         .arr:active{transform:scale(0.88)}
         .arr.dis{opacity:0.2;pointer-events:none}
-        .arr-cat{width:32px;height:32px;font-size:12px}
-        .arr-item{width:28px;height:28px;font-size:10px}
+        .arr-cat{width:30px;height:30px;font-size:11px}
+        .arr-item{width:26px;height:26px;font-size:10px}
 
-        .ro-item-row{display:flex;align-items:center;padding:7px 10px 7px 30px;border-top:0.5px solid rgba(0,0,0,0.05)}
-        .ro-item-row .ro-grip{font-size:10px;margin-right:6px;flex-shrink:0;opacity:0.3}
-        .ro-item-row .n{flex:1;font-size:13px;font-weight:500;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
-        .ro-empty{padding:8px 16px;text-align:center;font-size:12px;opacity:0.4}
+        .ro-item-row{display:flex;align-items:center;padding:6px 10px 6px 28px;border-top:0.5px solid rgba(0,0,0,0.05)}
+        .ro-item-row .ro-grip{font-size:9px;margin-right:6px;flex-shrink:0;opacity:0.25}
+        .ro-item-row .n{flex:1;font-size:12px;font-weight:500;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+        .ro-empty{padding:6px 16px;text-align:center;font-size:11px;opacity:0.35}
 
         @keyframes flashMove{0%{background:rgba(0,122,255,0.15)}100%{background:transparent}}
         .flash{animation:flashMove .4s ease}
@@ -201,29 +202,21 @@
     </style>
 </head>
 <body>
-
 <div class="header"><h1 id="h-title">Select Drugs</h1><div class="sub" id="h-sub">Tap a category, then tick drugs</div></div>
-
 <div class="page active" id="p1"><div class="pc" id="p1c"></div></div>
 <div class="page" id="p2"><div class="pc" id="p2c"></div></div>
 <div class="page" id="p3"><div class="pc" id="p3c"></div></div>
 <div class="page" id="p4"><div class="pc" id="p4c"></div></div>
-
 <div class="sel-badge" id="sbadge"></div>
-
 <div class="tab-bar">
     <div class="tab active" onclick="go(0)"><div class="ti">💊</div><div class="tl">Drugs</div></div>
     <div class="tab" onclick="go(1)"><div class="ti">🔧</div><div class="tl">Equip</div></div>
     <div class="tab" onclick="go(2)"><div class="ti">📋</div><div class="tl">Summary</div></div>
     <div class="tab" onclick="go(3)"><div class="ti">⚙️</div><div class="tl">Master</div></div>
 </div>
-
 <div class="mo" id="mo"><div class="modal" id="mdl"><h2 id="mt"></h2><div id="mbdy"></div><div class="mb"><button class="btn btn-c" onclick="cModal()">Cancel</button><button class="btn btn-p" id="msave">Save</button></div></div></div>
-
 <div class="co" id="co"><div class="cd"><div class="cd-body"><div class="cd-title" id="cot"></div><div class="cd-msg" id="com"></div></div><div class="cd-actions"><button onclick="cConf()">Cancel</button><button class="cdng" id="coa"></button></div></div></div>
-
 <div class="ip-o" id="ipo"><button class="close-p" onclick="cImg()">✕</button><img id="pimg" src=""><div class="pa"><button class="btn btn-p" onclick="dlImg()">💾 Save Image</button></div><p class="hint">Long-press image to save on iPhone</p></div>
-
 <div class="toast" id="toast"></div>
 <input type="file" id="imp-file" accept=".txt,.json,.meddilute">
 <div id="png-src"></div>
@@ -232,8 +225,7 @@
 const APP_NAME='Cardiac Drugs and Equipment';
 const CREDIT='Created by Dr Calvin Kwong, using Claude Opus 4.6';
 const PRESETS=['#FFD6D6','#FFDAB3','#FFF3B0','#D4F5D4','#D4EDFF','#E8D5F5','#FFE0F0','#D6F5F5','#F0E0C8','#E0E0E0','#FF8A80','#FFAB76','#FFE066','#81C784','#64B5F6','#CE93D8','#F48FB1','#4DD0E1','#D7A86E','#BDBDBD'];
-const DCC='#FFFFFF';
-const EV=4;
+const DCC='#FFFFFF',EV=4;
 const VALID_HEADERS=['## Cardiac Drugs and Equipment Backup ##','## MedDilute Backup File ##'];
 
 function hexRgb(h){h=h.replace('#','');return{r:parseInt(h.substring(0,2),16),g:parseInt(h.substring(2,4),16),b:parseInt(h.substring(4,6),16)};}
@@ -242,15 +234,15 @@ function tcf(h){return lum(h)>0.55?'#1C1C1E':'#FFFFFF';}
 function dk(h,a){const c=hexRgb(h),f=1-a;return'#'+[Math.round(c.r*f),Math.round(c.g*f),Math.round(c.b*f)].map(x=>x.toString(16).padStart(2,'0')).join('');}
 
 const DEF={cats:[
-    {id:1,name:"Sedation & Analgesia",color:"#D4EDFF",drugs:[{id:1,name:"Midazolam",dil:"50mg / 50ml NS (1mg/ml)"},{id:2,name:"Propofol",dil:"Neat: 10mg/ml or 20mg/ml"},{id:3,name:"Ketamine",dil:"200mg / 20ml NS (10mg/ml)"},{id:4,name:"Fentanyl",dil:"500mcg / 50ml NS (10mcg/ml)"},{id:5,name:"Morphine",dil:"50mg / 50ml NS (1mg/ml)"},{id:6,name:"Dexmedetomidine",dil:"200mcg / 50ml NS (4mcg/ml)"}]},
-    {id:2,name:"Vasopressors & Inotropes",color:"#FFD6D6",drugs:[{id:7,name:"Norepinephrine",dil:"4mg / 50ml D5W (80mcg/ml)"},{id:8,name:"Epinephrine",dil:"4mg / 50ml D5W (80mcg/ml)"},{id:9,name:"Vasopressin",dil:"20 units / 100ml NS (0.2 units/ml)"},{id:10,name:"Dobutamine",dil:"250mg / 50ml D5W (5mg/ml)"},{id:11,name:"Dopamine",dil:"400mg / 250ml D5W (1600mcg/ml)"},{id:12,name:"Milrinone",dil:"20mg / 100ml NS (200mcg/ml)"}]},
-    {id:3,name:"Anticoagulants",color:"#E8D5F5",drugs:[{id:13,name:"Heparin",dil:"25,000 units / 50ml NS (500 units/ml)"},{id:14,name:"Enoxaparin",dil:"Neat SC: 100mg/ml"}]},
-    {id:4,name:"Electrolytes",color:"#FFF3B0",drugs:[{id:15,name:"Potassium Chloride",dil:"40mmol / 100ml NS over 4hr"},{id:16,name:"Magnesium Sulfate",dil:"10mmol / 100ml NS over 30min"},{id:17,name:"Calcium Gluconate",dil:"10ml of 10% (2.2mmol) over 10min"}]},
-    {id:5,name:"Antibiotics",color:"#D4F5D4",drugs:[{id:18,name:"Vancomycin",dil:"1g / 250ml NS over 2hr"},{id:19,name:"Meropenem",dil:"1g / 100ml NS over 30min"},{id:20,name:"Piperacillin-Tazobactam",dil:"4.5g / 100ml NS over 30min"}]}
+{id:1,name:"Sedation & Analgesia",color:"#D4EDFF",drugs:[{id:1,name:"Midazolam",dil:"50mg / 50ml NS (1mg/ml)"},{id:2,name:"Propofol",dil:"Neat: 10mg/ml or 20mg/ml"},{id:3,name:"Ketamine",dil:"200mg / 20ml NS (10mg/ml)"},{id:4,name:"Fentanyl",dil:"500mcg / 50ml NS (10mcg/ml)"},{id:5,name:"Morphine",dil:"50mg / 50ml NS (1mg/ml)"},{id:6,name:"Dexmedetomidine",dil:"200mcg / 50ml NS (4mcg/ml)"}]},
+{id:2,name:"Vasopressors & Inotropes",color:"#FFD6D6",drugs:[{id:7,name:"Norepinephrine",dil:"4mg / 50ml D5W (80mcg/ml)"},{id:8,name:"Epinephrine",dil:"4mg / 50ml D5W (80mcg/ml)"},{id:9,name:"Vasopressin",dil:"20 units / 100ml NS (0.2 units/ml)"},{id:10,name:"Dobutamine",dil:"250mg / 50ml D5W (5mg/ml)"},{id:11,name:"Dopamine",dil:"400mg / 250ml D5W (1600mcg/ml)"},{id:12,name:"Milrinone",dil:"20mg / 100ml NS (200mcg/ml)"}]},
+{id:3,name:"Anticoagulants",color:"#E8D5F5",drugs:[{id:13,name:"Heparin",dil:"25,000 units / 50ml NS (500 units/ml)"},{id:14,name:"Enoxaparin",dil:"Neat SC: 100mg/ml"}]},
+{id:4,name:"Electrolytes",color:"#FFF3B0",drugs:[{id:15,name:"Potassium Chloride",dil:"40mmol / 100ml NS over 4hr"},{id:16,name:"Magnesium Sulfate",dil:"10mmol / 100ml NS over 30min"},{id:17,name:"Calcium Gluconate",dil:"10ml of 10% (2.2mmol) over 10min"}]},
+{id:5,name:"Antibiotics",color:"#D4F5D4",drugs:[{id:18,name:"Vancomycin",dil:"1g / 250ml NS over 2hr"},{id:19,name:"Meropenem",dil:"1g / 100ml NS over 30min"},{id:20,name:"Piperacillin-Tazobactam",dil:"4.5g / 100ml NS over 30min"}]}
 ],equip:[
-    {id:1,name:"Airway",color:"#D6F5F5",items:[{id:1,name:"McGrath",opts:["3","4","X"]},{id:2,name:"ETT Cuffed",opts:["6.0","6.5","7.0","7.5","8.0"]},{id:3,name:"LMA",opts:["3","4","5"]},{id:4,name:"Bougie",opts:["Adult","Paediatric"]}]},
-    {id:2,name:"Vascular Access",color:"#FFDAB3",items:[{id:5,name:"Central Line",opts:["Triple Lumen","Quad Lumen","Dialysis"]},{id:6,name:"Arterial Line",opts:["20G","22G"]},{id:7,name:"IV Cannula",opts:["14G","16G","18G","20G","22G"]}]},
-    {id:3,name:"Chest",color:"#FFE0F0",items:[{id:8,name:"ICC",opts:["12Fr","16Fr","20Fr","24Fr","28Fr","32Fr"]},{id:9,name:"Pigtail Catheter",opts:["8Fr","12Fr","14Fr"]}]}
+{id:1,name:"Airway",color:"#D6F5F5",items:[{id:1,name:"McGrath",opts:["3","4","X"]},{id:2,name:"ETT Cuffed",opts:["6.0","6.5","7.0","7.5","8.0"]},{id:3,name:"LMA",opts:["3","4","5"]},{id:4,name:"Bougie",opts:["Adult","Paediatric"]}]},
+{id:2,name:"Vascular Access",color:"#FFDAB3",items:[{id:5,name:"Central Line",opts:["Triple Lumen","Quad Lumen","Dialysis"]},{id:6,name:"Arterial Line",opts:["20G","22G"]},{id:7,name:"IV Cannula",opts:["14G","16G","18G","20G","22G"]}]},
+{id:3,name:"Chest",color:"#FFE0F0",items:[{id:8,name:"ICC",opts:["12Fr","16Fr","20Fr","24Fr","28Fr","32Fr"]},{id:9,name:"Pigtail Catheter",opts:["8Fr","12Fr","14Fr"]}]}
 ],nCat:6,nDrug:21,nEqCat:4,nEqItem:10};
 
 const LS_KEYS=['cde_data','cde_sel','cde_eqsel','md_data','md_sel','md_eqsel'];
@@ -283,46 +275,24 @@ function clrAll(){sel.clear();saveSel();r1();uBadge();}
 // ═══════ PAGE 2 ═══════
 function r2(){const c=document.getElementById('p2c');if(!D.equip.length){c.innerHTML='<div class="empty"><div class="ei">🔧</div><p>No equipment categories yet.<br>Go to Master to add some.</p></div>';return;}let h='';const ec=eqCnt();if(ec)h+=`<div style="text-align:right;margin-bottom:10px"><button class="clear-btn" onclick="clrAllEq()">✕ Clear All (${ec})</button></div>`;D.equip.forEach(cat=>{const cnt=cat.items.filter(it=>eqSel[it.id]&&eqSel[it.id].size>0).length;const ex=expEqCats.has(cat.id),bg=cat.color||DCC,tc=tcf(bg),bd=dk(bg,0.1);h+=`<div class="card" style="background:${bg}"><div class="cat-hdr${ex?' exp':''}" onclick="togEqCat(${cat.id})" style="color:${tc}"><span class="chv" style="color:${tc}">▶</span><span class="cn">${esc(cat.name)}</span><span class="badge ${cnt?'badge-on':'badge-off'}">${cnt?cnt+'/'+cat.items.length:cat.items.length}</span></div><div class="cat-body${ex?' exp':''}" style="border-top-color:${bd}">`;cat.items.forEach(it=>{const ss=eqSel[it.id]||new Set();h+=`<div class="eq-item" style="border-bottom-color:${bd}"><div class="eq-item-name" style="color:${tc}">${esc(it.name)}</div><div class="eq-chips">${it.opts.map(o=>`<button class="eq-chip ${ss.has(o)?'eq-chip-on':'eq-chip-off'}" onclick="togEqOpt(${it.id},'${escA(o)}')">${esc(o)}</button>`).join('')}</div></div>`;});h+=`</div></div>`;});c.innerHTML=h;}
 function togEqCat(id){expEqCats.has(id)?expEqCats.delete(id):expEqCats.add(id);r2();}
-function togEqOpt(itemId,opt){if(!eqSel[itemId])eqSel[itemId]=new Set();eqSel[itemId].has(opt)?eqSel[itemId].delete(opt):eqSel[itemId].add(opt);if(eqSel[itemId].size===0)delete eqSel[itemId];saveEqSel();r2();uBadge();}
+function togEqOpt(ii,o){if(!eqSel[ii])eqSel[ii]=new Set();eqSel[ii].has(o)?eqSel[ii].delete(o):eqSel[ii].add(o);if(eqSel[ii].size===0)delete eqSel[ii];saveEqSel();r2();uBadge();}
 function clrAllEq(){eqSel={};saveEqSel();r2();uBadge();}
 function uBadge(){const b=document.getElementById('sbadge'),tot=sel.size+eqCnt();b.textContent=tot+' selected →';b.onclick=()=>go(2);const pg=document.querySelector('.page.active');tot&&(pg.id==='p1'||pg.id==='p2')?b.classList.add('vis'):b.classList.remove('vis');}
 
 // ═══════ PAGE 3 ═══════
-function r3(){const c=document.getElementById('p3c');const hasDrugs=sel.size>0;let hasEquip=false;D.equip.forEach(cat=>{cat.items.forEach(it=>{if(eqSel[it.id]&&eqSel[it.id].size>0)hasEquip=true;});});if(!hasDrugs&&!hasEquip){c.innerHTML='<div class="empty"><div class="ei">📋</div><p>Nothing selected yet.<br>Go to Drugs or Equipment tabs.</p></div>';return;}let h='';if(hasDrugs){h+=`<div class="sum-sec-hdr">💊 Drugs</div>`;D.cats.forEach(cat=>{const ds=cat.drugs.filter(d=>sel.has(d.id));if(!ds.length)return;const bg=cat.color||DCC,tc=tcf(bg),bd=dk(bg,0.08);h+=`<div class="s-cat-card" style="background:${bg}"><div class="s-cat-label" style="color:${tc}">${esc(cat.name)}</div>${ds.map(d=>`<div class="s-drug" style="border-top-color:${bd}"><div class="sd-n" style="color:${tc}">${esc(d.name)}</div><div class="sd-d" style="color:${tc};opacity:0.7">${esc(d.dil)}</div></div>`).join('')}</div>`;});}if(hasEquip){h+=`<div class="sum-sec-hdr">🔧 Equipment</div>`;D.equip.forEach(cat=>{const its=cat.items.filter(it=>eqSel[it.id]&&eqSel[it.id].size>0);if(!its.length)return;const bg=cat.color||DCC,tc=tcf(bg),bd=dk(bg,0.08);h+=`<div class="s-cat-card" style="background:${bg}"><div class="s-cat-label" style="color:${tc}">${esc(cat.name)}</div>${its.map(it=>`<div class="s-drug" style="border-top-color:${bd}"><div class="sd-n" style="color:${tc}">${esc(it.name)}</div><div class="sd-d" style="color:${tc};opacity:0.7">${[...eqSel[it.id]].join(', ')}</div></div>`).join('')}</div>`;});}h+=`<button class="btn btn-p gen-btn" onclick="genPNG()">📸 Generate Reference Card</button>`;h+=`<div class="credit">${esc(CREDIT)}</div>`;c.innerHTML=h;}
+function r3(){const c=document.getElementById('p3c');const hd=sel.size>0;let he=false;D.equip.forEach(cat=>{cat.items.forEach(it=>{if(eqSel[it.id]&&eqSel[it.id].size>0)he=true;});});if(!hd&&!he){c.innerHTML='<div class="empty"><div class="ei">📋</div><p>Nothing selected yet.<br>Go to Drugs or Equipment tabs.</p></div>';return;}let h='';if(hd){h+=`<div class="sum-sec-hdr">💊 Drugs</div>`;D.cats.forEach(cat=>{const ds=cat.drugs.filter(d=>sel.has(d.id));if(!ds.length)return;const bg=cat.color||DCC,tc=tcf(bg),bd=dk(bg,0.08);h+=`<div class="s-cat-card" style="background:${bg}"><div class="s-cat-label" style="color:${tc}">${esc(cat.name)}</div>${ds.map(d=>`<div class="s-drug" style="border-top-color:${bd}"><div class="sd-n" style="color:${tc}">${esc(d.name)}</div><div class="sd-d" style="color:${tc};opacity:0.7">${esc(d.dil)}</div></div>`).join('')}</div>`;});}if(he){h+=`<div class="sum-sec-hdr">🔧 Equipment</div>`;D.equip.forEach(cat=>{const its=cat.items.filter(it=>eqSel[it.id]&&eqSel[it.id].size>0);if(!its.length)return;const bg=cat.color||DCC,tc=tcf(bg),bd=dk(bg,0.08);h+=`<div class="s-cat-card" style="background:${bg}"><div class="s-cat-label" style="color:${tc}">${esc(cat.name)}</div>${its.map(it=>`<div class="s-drug" style="border-top-color:${bd}"><div class="sd-n" style="color:${tc}">${esc(it.name)}</div><div class="sd-d" style="color:${tc};opacity:0.7">${[...eqSel[it.id]].join(', ')}</div></div>`).join('')}</div>`;});}h+=`<button class="btn btn-p gen-btn" onclick="genPNG()">📸 Generate Reference Card</button>`;h+=`<div class="credit">${esc(CREDIT)}</div>`;c.innerHTML=h;}
 
 // ═══════ PAGE 4 ═══════
 function switchMS(s){masterSec=s;reorderMode=false;r4();}
 function r4(){const c=document.getElementById('p4c');let h=`<div class="seg-ctrl"><button class="seg-btn ${masterSec==='drugs'?'active':''}" onclick="switchMS('drugs')">💊 Drugs</button><button class="seg-btn ${masterSec==='equip'?'active':''}" onclick="switchMS('equip')">🔧 Equipment</button></div>`;if(masterSec==='drugs'){h+=reorderMode?roDrugs():mDrugs();}else{h+=reorderMode?roEquip():mEquip();}h+=`<div class="ie-section"><div class="ie-title">📦 Backup & Restore</div><div class="ie-desc"><b>Export</b> saves everything to a text file.<br><b>Import</b> deletes all existing data, then restores from file.</div><div class="ie-btns"><button class="btn btn-p" onclick="doExport()">📤 Export</button><button class="btn btn-o" onclick="doImportClick()">📥 Import</button></div></div>`;h+=`<div class="reset-sec"><button class="btn btn-d" onclick="resetAll()">🔄 Reset to Default Data</button><p class="reset-hint">Erases all changes & restores sample data</p></div>`;c.innerHTML=h;}
 
-function mDrugs(){let h=`<div class="top-bar-row"><button class="btn btn-g" style="flex:1" onclick="addCat()">＋ Add Category</button><button class="btn btn-reorder" onclick="toggleReorder()">↕️ Reorder</button></div>`;if(!D.cats.length)h+='<div class="empty"><div class="ei">💊</div><p>No drug categories yet.</p></div>';D.cats.forEach(cat=>{const bg=cat.color||DCC,tc=tcf(bg),bd=dk(bg,0.08);h+=`<div class="card" style="background:${bg}"><div class="m-cat-hdr" style="border-bottom-color:${bd}"><span class="cn" style="color:${tc}">${esc(cat.name)}</span><div class="m-actions"><button class="ib" onclick="pickColor('drug',${cat.id})">🎨</button><button class="ib" onclick="editCat(${cat.id})">✏️</button><button class="ib" onclick="delCat(${cat.id})">🗑️</button></div></div>`;cat.drugs.forEach(d=>{h+=`<div class="m-drug" style="border-bottom-color:${bd}"><div class="m-drug-info"><div class="n" style="color:${tc}">${esc(d.name)}</div><div class="d" style="color:${tc};opacity:0.6">${esc(d.dil)}</div></div><div class="m-actions"><button class="ib" onclick="editDrug(${cat.id},${d.id})">✏️</button><button class="ib" onclick="delDrug(${cat.id},${d.id})">🗑️</button></div></div>`;});h+=`<button class="add-d-btn" onclick="addDrug(${cat.id})" style="border-top-color:${bd};color:${tc}">＋ Add Drug</button></div>`;});return h;}
+function mDrugs(){let h=`<div class="top-bar-row"><button class="btn-add" onclick="addCat()">＋ Add Category</button><button class="btn-ro" onclick="toggleReorder()">↕️ Reorder</button></div>`;if(!D.cats.length)h+='<div class="empty"><div class="ei">💊</div><p>No drug categories yet.</p></div>';D.cats.forEach(cat=>{const bg=cat.color||DCC,tc=tcf(bg),bd=dk(bg,0.08);h+=`<div class="card" style="background:${bg}"><div class="m-cat-hdr" style="border-bottom-color:${bd}"><span class="cn" style="color:${tc}">${esc(cat.name)}</span><div class="m-actions"><button class="ib" onclick="pickColor('drug',${cat.id})">🎨</button><button class="ib" onclick="editCat(${cat.id})">✏️</button><button class="ib" onclick="delCat(${cat.id})">🗑️</button></div></div>`;cat.drugs.forEach(d=>{h+=`<div class="m-drug" style="border-bottom-color:${bd}"><div class="m-drug-info"><div class="n" style="color:${tc}">${esc(d.name)}</div><div class="d" style="color:${tc};opacity:0.6">${esc(d.dil)}</div></div><div class="m-actions"><button class="ib" onclick="editDrug(${cat.id},${d.id})">✏️</button><button class="ib" onclick="delDrug(${cat.id},${d.id})">🗑️</button></div></div>`;});h+=`<button class="add-d-btn" onclick="addDrug(${cat.id})" style="border-top-color:${bd};color:${tc}">＋ Add Drug</button></div>`;});return h;}
 
-function mEquip(){let h=`<div class="top-bar-row"><button class="btn btn-g" style="flex:1" onclick="addEqCat()">＋ Add Category</button><button class="btn btn-reorder" onclick="toggleReorder()">↕️ Reorder</button></div>`;if(!D.equip.length)h+='<div class="empty"><div class="ei">🔧</div><p>No equipment categories yet.</p></div>';D.equip.forEach(cat=>{const bg=cat.color||DCC,tc=tcf(bg),bd=dk(bg,0.08);h+=`<div class="card" style="background:${bg}"><div class="m-cat-hdr" style="border-bottom-color:${bd}"><span class="cn" style="color:${tc}">${esc(cat.name)}</span><div class="m-actions"><button class="ib" onclick="pickColor('equip',${cat.id})">🎨</button><button class="ib" onclick="editEqCat(${cat.id})">✏️</button><button class="ib" onclick="delEqCat(${cat.id})">🗑️</button></div></div>`;cat.items.forEach(it=>{h+=`<div class="m-drug" style="border-bottom-color:${bd}"><div class="m-drug-info"><div class="n" style="color:${tc}">${esc(it.name)}</div><div class="m-eq-opts">${it.opts.map(o=>`<span class="m-eq-pill" style="color:${tc}">${esc(o)}</span>`).join('')}</div></div><div class="m-actions"><button class="ib" onclick="editEqItem(${cat.id},${it.id})">✏️</button><button class="ib" onclick="delEqItem(${cat.id},${it.id})">🗑️</button></div></div>`;});h+=`<button class="add-d-btn" onclick="addEqItem(${cat.id})" style="border-top-color:${bd};color:${tc}">＋ Add Item</button></div>`;});return h;}
+function mEquip(){let h=`<div class="top-bar-row"><button class="btn-add" onclick="addEqCat()">＋ Add Category</button><button class="btn-ro" onclick="toggleReorder()">↕️ Reorder</button></div>`;if(!D.equip.length)h+='<div class="empty"><div class="ei">🔧</div><p>No equipment categories yet.</p></div>';D.equip.forEach(cat=>{const bg=cat.color||DCC,tc=tcf(bg),bd=dk(bg,0.08);h+=`<div class="card" style="background:${bg}"><div class="m-cat-hdr" style="border-bottom-color:${bd}"><span class="cn" style="color:${tc}">${esc(cat.name)}</span><div class="m-actions"><button class="ib" onclick="pickColor('equip',${cat.id})">🎨</button><button class="ib" onclick="editEqCat(${cat.id})">✏️</button><button class="ib" onclick="delEqCat(${cat.id})">🗑️</button></div></div>`;cat.items.forEach(it=>{h+=`<div class="m-drug" style="border-bottom-color:${bd}"><div class="m-drug-info"><div class="n" style="color:${tc}">${esc(it.name)}</div><div class="m-eq-opts">${it.opts.map(o=>`<span class="m-eq-pill" style="color:${tc}">${esc(o)}</span>`).join('')}</div></div><div class="m-actions"><button class="ib" onclick="editEqItem(${cat.id},${it.id})">✏️</button><button class="ib" onclick="delEqItem(${cat.id},${it.id})">🗑️</button></div></div>`;});h+=`<button class="add-d-btn" onclick="addEqItem(${cat.id})" style="border-top-color:${bd};color:${tc}">＋ Add Item</button></div>`;});return h;}
 
-// ── COMPACT REORDER ──
-function roDrugs(){
-    let h=`<div class="reorder-banner"><div class="rb-icon">↕️</div><div class="rb-text">Tap arrows to reorder.</div><button class="rb-done" onclick="exitReorder()">Done</button></div>`;
-    D.cats.forEach((cat,ci)=>{
-        const bg=cat.color||DCC,tc=tcf(bg),bd=dk(bg,0.06);
-        h+=`<div class="card" style="background:${bg}" id="rc-${cat.id}"><div class="ro-cat-row"><span class="ro-grip" style="color:${tc}">☰</span><span class="cn" style="color:${tc}">${esc(cat.name)}</span><div class="ro-arrows"><button class="arr arr-cat${ci===0?' dis':''}" onclick="moveCat(${ci},-1)">▲</button><button class="arr arr-cat${ci===D.cats.length-1?' dis':''}" onclick="moveCat(${ci},1)">▼</button></div></div>`;
-        cat.drugs.forEach((d,di)=>{
-            h+=`<div class="ro-item-row" style="border-top-color:${bd}" id="rd-${d.id}"><span class="ro-grip" style="color:${tc}">┃</span><span class="n" style="color:${tc}">${esc(d.name)}</span><div class="ro-arrows"><button class="arr arr-item${di===0?' dis':''}" onclick="moveDrug(${cat.id},${di},-1)">▲</button><button class="arr arr-item${di===cat.drugs.length-1?' dis':''}" onclick="moveDrug(${cat.id},${di},1)">▼</button></div></div>`;
-        });
-        if(!cat.drugs.length)h+=`<div class="ro-empty" style="color:${tc}">No drugs</div>`;
-        h+=`</div>`;
-    });return h;
-}
-function roEquip(){
-    let h=`<div class="reorder-banner"><div class="rb-icon">↕️</div><div class="rb-text">Tap arrows to reorder.</div><button class="rb-done" onclick="exitReorder()">Done</button></div>`;
-    D.equip.forEach((cat,ci)=>{
-        const bg=cat.color||DCC,tc=tcf(bg),bd=dk(bg,0.06);
-        h+=`<div class="card" style="background:${bg}" id="rec-${cat.id}"><div class="ro-cat-row"><span class="ro-grip" style="color:${tc}">☰</span><span class="cn" style="color:${tc}">${esc(cat.name)}</span><div class="ro-arrows"><button class="arr arr-cat${ci===0?' dis':''}" onclick="moveEqCat(${ci},-1)">▲</button><button class="arr arr-cat${ci===D.equip.length-1?' dis':''}" onclick="moveEqCat(${ci},1)">▼</button></div></div>`;
-        cat.items.forEach((it,ii)=>{
-            h+=`<div class="ro-item-row" style="border-top-color:${bd}" id="rei-${it.id}"><span class="ro-grip" style="color:${tc}">┃</span><span class="n" style="color:${tc}">${esc(it.name)}</span><div class="ro-arrows"><button class="arr arr-item${ii===0?' dis':''}" onclick="moveEqItem(${cat.id},${ii},-1)">▲</button><button class="arr arr-item${ii===cat.items.length-1?' dis':''}" onclick="moveEqItem(${cat.id},${ii},1)">▼</button></div></div>`;
-        });
-        if(!cat.items.length)h+=`<div class="ro-empty" style="color:${tc}">No items</div>`;
-        h+=`</div>`;
-    });return h;
-}
+function roDrugs(){let h=`<div class="reorder-banner"><div class="rb-text">↕️ Tap arrows to reorder</div><button class="rb-done" onclick="exitReorder()">Done</button></div>`;D.cats.forEach((cat,ci)=>{const bg=cat.color||DCC,tc=tcf(bg),bd=dk(bg,0.05);h+=`<div class="card" style="background:${bg}" id="rc-${cat.id}"><div class="ro-cat-row"><span class="ro-grip" style="color:${tc}">☰</span><span class="cn" style="color:${tc}">${esc(cat.name)}</span><div class="ro-arrows"><button class="arr arr-cat${ci===0?' dis':''}" onclick="moveCat(${ci},-1)">▲</button><button class="arr arr-cat${ci===D.cats.length-1?' dis':''}" onclick="moveCat(${ci},1)">▼</button></div></div>`;cat.drugs.forEach((d,di)=>{h+=`<div class="ro-item-row" style="border-top-color:${bd}" id="rd-${d.id}"><span class="ro-grip" style="color:${tc}">┃</span><span class="n" style="color:${tc}">${esc(d.name)}</span><div class="ro-arrows"><button class="arr arr-item${di===0?' dis':''}" onclick="moveDrug(${cat.id},${di},-1)">▲</button><button class="arr arr-item${di===cat.drugs.length-1?' dis':''}" onclick="moveDrug(${cat.id},${di},1)">▼</button></div></div>`;});if(!cat.drugs.length)h+=`<div class="ro-empty" style="color:${tc}">No drugs</div>`;h+=`</div>`;});return h;}
+
+function roEquip(){let h=`<div class="reorder-banner"><div class="rb-text">↕️ Tap arrows to reorder</div><button class="rb-done" onclick="exitReorder()">Done</button></div>`;D.equip.forEach((cat,ci)=>{const bg=cat.color||DCC,tc=tcf(bg),bd=dk(bg,0.05);h+=`<div class="card" style="background:${bg}" id="rec-${cat.id}"><div class="ro-cat-row"><span class="ro-grip" style="color:${tc}">☰</span><span class="cn" style="color:${tc}">${esc(cat.name)}</span><div class="ro-arrows"><button class="arr arr-cat${ci===0?' dis':''}" onclick="moveEqCat(${ci},-1)">▲</button><button class="arr arr-cat${ci===D.equip.length-1?' dis':''}" onclick="moveEqCat(${ci},1)">▼</button></div></div>`;cat.items.forEach((it,ii)=>{h+=`<div class="ro-item-row" style="border-top-color:${bd}" id="rei-${it.id}"><span class="ro-grip" style="color:${tc}">┃</span><span class="n" style="color:${tc}">${esc(it.name)}</span><div class="ro-arrows"><button class="arr arr-item${ii===0?' dis':''}" onclick="moveEqItem(${cat.id},${ii},-1)">▲</button><button class="arr arr-item${ii===cat.items.length-1?' dis':''}" onclick="moveEqItem(${cat.id},${ii},1)">▼</button></div></div>`;});if(!cat.items.length)h+=`<div class="ro-empty" style="color:${tc}">No items</div>`;h+=`</div>`;});return h;}
 
 function toggleReorder(){reorderMode=!reorderMode;r4();if(reorderMode)toast('↕️ Reorder mode ON');}
 function exitReorder(){reorderMode=false;r4();r1();r2();r3();toast('✅ Order saved');}
@@ -338,9 +308,8 @@ function customC(v){document.querySelectorAll('#cgrid .cg-swatch').forEach(s=>{s
 function updPrev(h){const p=document.getElementById('cprev');if(!p)return;p.style.background=h;p.style.color=tcf(h);}
 
 // ═══════ MODAL ═══════
-function oModal(title,body,cb){document.getElementById('mt').textContent=title;document.getElementById('mbdy').innerHTML=body;modalCb=cb;document.getElementById('msave').onclick=cb;document.getElementById('mo').classList.add('act');}
+function oModal(t,b,cb){document.getElementById('mt').textContent=t;document.getElementById('mbdy').innerHTML=b;modalCb=cb;document.getElementById('msave').onclick=cb;document.getElementById('mo').classList.add('act');}
 function cModal(){document.getElementById('mo').classList.remove('act');modalCb=null;}
-
 function addCat(){oModal('Add Drug Category',`<div class="fg"><label>Category Name</label><input id="mi1" placeholder="e.g. Antiemetics"></div>`,()=>{const n=document.getElementById('mi1').value.trim();if(!n)return alert('Enter a name.');D.cats.push({id:D.nCat++,name:n,color:DCC,drugs:[]});saveD();cModal();r1();r4();});setTimeout(()=>document.getElementById('mi1').focus(),300);}
 function editCat(id){const cat=D.cats.find(c=>c.id===id);oModal('Edit Drug Category',`<div class="fg"><label>Category Name</label><input id="mi1" value="${escA(cat.name)}"></div>`,()=>{const n=document.getElementById('mi1').value.trim();if(!n)return alert('Enter a name.');cat.name=n;saveD();cModal();r1();r2();r3();r4();});setTimeout(()=>document.getElementById('mi1').focus(),300);}
 function delCat(id){const cat=D.cats.find(c=>c.id===id);showConf('Delete Category','Delete "'+cat.name+'" and all its drugs?','Delete',()=>{cat.drugs.forEach(d=>sel.delete(d.id));saveSel();D.cats=D.cats.filter(c=>c.id!==id);saveD();cConf();r1();r2();r3();r4();uBadge();});}
@@ -350,7 +319,7 @@ function delDrug(ci,di){const cat=D.cats.find(c=>c.id===ci),dr=cat.drugs.find(d=
 function addEqCat(){oModal('Add Equipment Category',`<div class="fg"><label>Category Name</label><input id="mi1" placeholder="e.g. Airway"></div>`,()=>{const n=document.getElementById('mi1').value.trim();if(!n)return alert('Enter a name.');D.equip.push({id:D.nEqCat++,name:n,color:DCC,items:[]});saveD();cModal();r2();r4();});setTimeout(()=>document.getElementById('mi1').focus(),300);}
 function editEqCat(id){const cat=D.equip.find(c=>c.id===id);oModal('Edit Equipment Category',`<div class="fg"><label>Category Name</label><input id="mi1" value="${escA(cat.name)}"></div>`,()=>{const n=document.getElementById('mi1').value.trim();if(!n)return alert('Enter a name.');cat.name=n;saveD();cModal();r2();r3();r4();});setTimeout(()=>document.getElementById('mi1').focus(),300);}
 function delEqCat(id){const cat=D.equip.find(c=>c.id===id);showConf('Delete Category','Delete "'+cat.name+'" and all its items?','Delete',()=>{cat.items.forEach(it=>delete eqSel[it.id]);saveEqSel();D.equip=D.equip.filter(c=>c.id!==id);saveD();cConf();r2();r3();r4();uBadge();});}
-function addEqItem(ci){oModal('Add Equipment Item',`<div class="fg"><label>Item Name</label><input id="mi1" placeholder="e.g. McGrath"></div><div class="fg"><label>Options</label><textarea id="mi2" placeholder="Enter each option on a new line, e.g.:\n3\n4\nX"></textarea><div class="fg-hint">One option per line</div></div>`,()=>{const n=document.getElementById('mi1').value.trim(),raw=document.getElementById('mi2').value;const opts=raw.split('\n').map(s=>s.trim()).filter(Boolean);if(!n)return alert('Enter a name.');if(!opts.length)return alert('Add at least one option.');D.equip.find(c=>c.id===ci).items.push({id:D.nEqItem++,name:n,opts:opts});saveD();cModal();r2();r4();});setTimeout(()=>document.getElementById('mi1').focus(),300);}
+function addEqItem(ci){oModal('Add Equipment Item',`<div class="fg"><label>Item Name</label><input id="mi1" placeholder="e.g. McGrath"></div><div class="fg"><label>Options</label><textarea id="mi2" placeholder="One per line, e.g.:\n3\n4\nX"></textarea><div class="fg-hint">One option per line</div></div>`,()=>{const n=document.getElementById('mi1').value.trim(),raw=document.getElementById('mi2').value;const opts=raw.split('\n').map(s=>s.trim()).filter(Boolean);if(!n)return alert('Enter a name.');if(!opts.length)return alert('Add at least one option.');D.equip.find(c=>c.id===ci).items.push({id:D.nEqItem++,name:n,opts});saveD();cModal();r2();r4();});setTimeout(()=>document.getElementById('mi1').focus(),300);}
 function editEqItem(ci,ii){const cat=D.equip.find(c=>c.id===ci),it=cat.items.find(i=>i.id===ii);oModal('Edit Equipment Item',`<div class="fg"><label>Item Name</label><input id="mi1" value="${escA(it.name)}"></div><div class="fg"><label>Options</label><textarea id="mi2">${esc(it.opts.join('\n'))}</textarea><div class="fg-hint">One option per line</div></div>`,()=>{const n=document.getElementById('mi1').value.trim(),raw=document.getElementById('mi2').value;const opts=raw.split('\n').map(s=>s.trim()).filter(Boolean);if(!n)return alert('Enter a name.');if(!opts.length)return alert('Add at least one option.');const nw=new Set(opts);if(eqSel[ii]){eqSel[ii]=new Set([...eqSel[ii]].filter(o=>nw.has(o)));if(!eqSel[ii].size)delete eqSel[ii];saveEqSel();}it.name=n;it.opts=opts;saveD();cModal();r2();r3();r4();});setTimeout(()=>document.getElementById('mi1').focus(),300);}
 function delEqItem(ci,ii){const cat=D.equip.find(c=>c.id===ci),it=cat.items.find(i=>i.id===ii);showConf('Delete Item','Delete "'+it.name+'"?','Delete',()=>{delete eqSel[ii];saveEqSel();cat.items=cat.items.filter(i=>i.id!==ii);saveD();cConf();r2();r3();r4();uBadge();});}
 function resetAll(){showConf('Reset All Data','Erase all changes & restore defaults?','Reset',()=>{wipeAll();D=JSON.parse(JSON.stringify(DEF));saveD();saveSel();saveEqSel();cConf();r1();r2();r3();r4();uBadge();});}
@@ -367,49 +336,10 @@ function fbDL(u,f){const a=document.createElement('a');a.href=u;a.download=f;doc
 // ═══════ IMPORT ═══════
 function doImportClick(){document.getElementById('imp-file').value='';document.getElementById('imp-file').click();}
 function handleImport(e){const file=e.target.files[0];if(!file)return;const reader=new FileReader();reader.onload=function(ev){try{const parsed=parseImport(ev.target.result);let dc=0,ec=0;parsed.cats.forEach(c=>dc+=c.drugs.length);parsed.equip.forEach(c=>ec+=c.items.length);showConf('Import Backup','⚠️ This will DELETE all existing data first, then restore from file.\n\n'+parsed.cats.length+' drug categories ('+dc+' drugs)\n'+parsed.equip.length+' equipment categories ('+ec+' items)','Import',()=>{wipeAll();D=parsed;saveD();saveSel();saveEqSel();cConf();r1();r2();r3();r4();uBadge();toast('✅ Import complete');});}catch(err){alert('❌ Import failed:\n'+err.message);}};reader.readAsText(file);}
-
-function parseImport(text){
-    const lines=text.split('\n').map(l=>l.trimEnd());const hdr=lines[0]?lines[0].trim():'';
-    if(!VALID_HEADERS.includes(hdr))throw new Error('Not a valid backup file.\n\nExpected one of:\n'+VALID_HEADERS.map(h=>'• '+h).join('\n')+'\n\nGot: "'+hdr+'"');
-    const R={cats:[],equip:[],nCat:0,nDrug:0,nEqCat:0,nEqItem:0};let cc=null,cd=null,ec=null,ei=null,section='';
-    for(let i=0;i<lines.length;i++){const t=lines[i].trim();
-        if(t==='---CATEGORIES---'){section='cats';continue;}
-        if(t==='---EQUIPMENT---'){if(cc){R.cats.push(cc);cc=null;cd=null;}section='equip';continue;}
-        if(t==='---END---'){if(cc){R.cats.push(cc);cc=null;cd=null;}if(ec){R.equip.push(ec);ec=null;ei=null;}break;}
-        if(t.startsWith('nCat:')){R.nCat=parseInt(t.split(':')[1])||0;continue;}
-        if(t.startsWith('nDrug:')){R.nDrug=parseInt(t.split(':')[1])||0;continue;}
-        if(t.startsWith('nEqCat:')){R.nEqCat=parseInt(t.split(':')[1])||0;continue;}
-        if(t.startsWith('nEqItem:')){R.nEqItem=parseInt(t.split(':')[1])||0;continue;}
-        if(section==='cats'){if(t==='[CATEGORY]'){if(cc)R.cats.push(cc);cc={id:0,name:'',color:DCC,drugs:[]};cd=null;}
-        else if(cc&&!cd&&t.startsWith('id:'))cc.id=parseInt(t.split(':')[1])||0;
-        else if(cc&&!cd&&t.startsWith('name:'))cc.name=t.substring(t.indexOf(':')+1).trim();
-        else if(cc&&!cd&&t.startsWith('color:'))cc.color=t.substring(t.indexOf(':')+1).trim();
-        else if(t==='[DRUG]')cd={id:0,name:'',dil:''};
-        else if(cd&&t.startsWith('id:'))cd.id=parseInt(t.split(':')[1])||0;
-        else if(cd&&t.startsWith('name:'))cd.name=t.substring(t.indexOf(':')+1).trim();
-        else if(cd&&t.startsWith('dilution:')){cd.dil=t.substring(t.indexOf(':')+1).trim();if(cc)cc.drugs.push(cd);cd=null;}}
-        if(section==='equip'){if(t==='[EQ_CATEGORY]'){if(ec)R.equip.push(ec);ec={id:0,name:'',color:DCC,items:[]};ei=null;}
-        else if(ec&&!ei&&t.startsWith('id:'))ec.id=parseInt(t.split(':')[1])||0;
-        else if(ec&&!ei&&t.startsWith('name:'))ec.name=t.substring(t.indexOf(':')+1).trim();
-        else if(ec&&!ei&&t.startsWith('color:'))ec.color=t.substring(t.indexOf(':')+1).trim();
-        else if(t==='[EQ_ITEM]')ei={id:0,name:'',opts:[]};
-        else if(ei&&t.startsWith('id:'))ei.id=parseInt(t.split(':')[1])||0;
-        else if(ei&&t.startsWith('name:'))ei.name=t.substring(t.indexOf(':')+1).trim();
-        else if(ei&&t.startsWith('options:')){ei.opts=t.substring(t.indexOf(':')+1).trim().split(' | ').map(s=>s.trim()).filter(Boolean);if(ec)ec.items.push(ei);ei=null;}}
-    }
-    if(cc)R.cats.push(cc);if(ec)R.equip.push(ec);
-    if(!R.equip)R.equip=[];
-    R.cats.forEach((c,i)=>{if(!c.name)throw new Error('Drug category '+(i+1)+' has no name.');});
-    R.equip.forEach((c,i)=>{if(!c.name)throw new Error('Equipment category '+(i+1)+' has no name.');});
-    if(!R.nCat&&R.cats.length)R.nCat=Math.max(...R.cats.map(c=>c.id))+1;
-    if(!R.nDrug){let m=0;R.cats.forEach(c=>c.drugs.forEach(d=>{if(d.id>m)m=d.id;}));R.nDrug=m+1;}
-    if(!R.nEqCat&&R.equip.length)R.nEqCat=Math.max(...R.equip.map(c=>c.id))+1;
-    if(!R.nEqItem){let m=0;R.equip.forEach(c=>(c.items||[]).forEach(i=>{if(i.id>m)m=i.id;}));R.nEqItem=m+1;}
-    return R;
-}
+function parseImport(text){const lines=text.split('\n').map(l=>l.trimEnd());const hdr=lines[0]?lines[0].trim():'';if(!VALID_HEADERS.includes(hdr))throw new Error('Not a valid backup file.\n\nGot: "'+hdr+'"');const R={cats:[],equip:[],nCat:0,nDrug:0,nEqCat:0,nEqItem:0};let cc=null,cd=null,ec=null,ei=null,section='';for(let i=0;i<lines.length;i++){const t=lines[i].trim();if(t==='---CATEGORIES---'){section='cats';continue;}if(t==='---EQUIPMENT---'){if(cc){R.cats.push(cc);cc=null;cd=null;}section='equip';continue;}if(t==='---END---'){if(cc){R.cats.push(cc);cc=null;cd=null;}if(ec){R.equip.push(ec);ec=null;ei=null;}break;}if(t.startsWith('nCat:')){R.nCat=parseInt(t.split(':')[1])||0;continue;}if(t.startsWith('nDrug:')){R.nDrug=parseInt(t.split(':')[1])||0;continue;}if(t.startsWith('nEqCat:')){R.nEqCat=parseInt(t.split(':')[1])||0;continue;}if(t.startsWith('nEqItem:')){R.nEqItem=parseInt(t.split(':')[1])||0;continue;}if(section==='cats'){if(t==='[CATEGORY]'){if(cc)R.cats.push(cc);cc={id:0,name:'',color:DCC,drugs:[]};cd=null;}else if(cc&&!cd&&t.startsWith('id:'))cc.id=parseInt(t.split(':')[1])||0;else if(cc&&!cd&&t.startsWith('name:'))cc.name=t.substring(t.indexOf(':')+1).trim();else if(cc&&!cd&&t.startsWith('color:'))cc.color=t.substring(t.indexOf(':')+1).trim();else if(t==='[DRUG]')cd={id:0,name:'',dil:''};else if(cd&&t.startsWith('id:'))cd.id=parseInt(t.split(':')[1])||0;else if(cd&&t.startsWith('name:'))cd.name=t.substring(t.indexOf(':')+1).trim();else if(cd&&t.startsWith('dilution:')){cd.dil=t.substring(t.indexOf(':')+1).trim();if(cc)cc.drugs.push(cd);cd=null;}}if(section==='equip'){if(t==='[EQ_CATEGORY]'){if(ec)R.equip.push(ec);ec={id:0,name:'',color:DCC,items:[]};ei=null;}else if(ec&&!ei&&t.startsWith('id:'))ec.id=parseInt(t.split(':')[1])||0;else if(ec&&!ei&&t.startsWith('name:'))ec.name=t.substring(t.indexOf(':')+1).trim();else if(ec&&!ei&&t.startsWith('color:'))ec.color=t.substring(t.indexOf(':')+1).trim();else if(t==='[EQ_ITEM]')ei={id:0,name:'',opts:[]};else if(ei&&t.startsWith('id:'))ei.id=parseInt(t.split(':')[1])||0;else if(ei&&t.startsWith('name:'))ei.name=t.substring(t.indexOf(':')+1).trim();else if(ei&&t.startsWith('options:')){ei.opts=t.substring(t.indexOf(':')+1).trim().split(' | ').map(s=>s.trim()).filter(Boolean);if(ec)ec.items.push(ei);ei=null;}}}if(cc)R.cats.push(cc);if(ec)R.equip.push(ec);if(!R.equip)R.equip=[];R.cats.forEach((c,i)=>{if(!c.name)throw new Error('Drug category '+(i+1)+' has no name.');});R.equip.forEach((c,i)=>{if(!c.name)throw new Error('Equipment category '+(i+1)+' has no name.');});if(!R.nCat&&R.cats.length)R.nCat=Math.max(...R.cats.map(c=>c.id))+1;if(!R.nDrug){let m=0;R.cats.forEach(c=>c.drugs.forEach(d=>{if(d.id>m)m=d.id;}));R.nDrug=m+1;}if(!R.nEqCat&&R.equip.length)R.nEqCat=Math.max(...R.equip.map(c=>c.id))+1;if(!R.nEqItem){let m=0;R.equip.forEach(c=>(c.items||[]).forEach(i=>{if(i.id>m)m=i.id;}));R.nEqItem=m+1;}return R;}
 
 // ═══════ PNG ═══════
-function genPNG(){const src=document.getElementById('png-src');const dt=new Date().toLocaleDateString('en-US',{year:'numeric',month:'short',day:'numeric'});let hasDrugs=sel.size>0,hasEquip=false;D.equip.forEach(c=>c.items.forEach(i=>{if(eqSel[i.id]&&eqSel[i.id].size)hasEquip=true;}));let h=`<div class="pt">${esc(APP_NAME)}</div><div class="pd">${dt}</div>`;if(hasDrugs){h+=`<div class="psh">💊 Drugs</div>`;D.cats.forEach(cat=>{const ds=cat.drugs.filter(d=>sel.has(d.id));if(!ds.length)return;const bg=cat.color||DCC,tc=tcf(bg);h+=`<div class="pc2" style="background:${bg}"><div class="pcn" style="color:${tc};border-bottom:2px solid ${dk(bg,0.15)}">${esc(cat.name)}</div>${ds.map(d=>`<div class="pdr"><span class="pdn" style="color:${tc}">${esc(d.name)}</span><span class="pdd" style="color:${tc};opacity:0.7"> — ${esc(d.dil)}</span></div>`).join('')}</div>`;});}if(hasEquip){h+=`<div class="psh">🔧 Equipment</div>`;D.equip.forEach(cat=>{const its=cat.items.filter(i=>eqSel[i.id]&&eqSel[i.id].size>0);if(!its.length)return;const bg=cat.color||DCC,tc=tcf(bg);h+=`<div class="pc2" style="background:${bg}"><div class="pcn" style="color:${tc};border-bottom:2px solid ${dk(bg,0.15)}">${esc(cat.name)}</div>${its.map(i=>`<div class="pdr"><span class="pdn" style="color:${tc}">${esc(i.name)}</span><span class="pdd" style="color:${tc};opacity:0.7"> — ${[...eqSel[i.id]].join(', ')}</span></div>`).join('')}</div>`;});}src.innerHTML=h;html2canvas(src,{scale:2,backgroundColor:'#fff',useCORS:true,logging:false,width:380,windowWidth:380}).then(cv=>{document.getElementById('pimg').src=cv.toDataURL('image/png');document.getElementById('ipo').classList.add('act');src.innerHTML='';}).catch(()=>{alert('Image generation failed.');src.innerHTML='';});}
+function genPNG(){const src=document.getElementById('png-src');const dt=new Date().toLocaleDateString('en-US',{year:'numeric',month:'short',day:'numeric'});let hd=sel.size>0,he=false;D.equip.forEach(c=>c.items.forEach(i=>{if(eqSel[i.id]&&eqSel[i.id].size)he=true;}));let h=`<div class="pt">${esc(APP_NAME)}</div><div class="pd">${dt}</div>`;if(hd){h+=`<div class="psh">💊 Drugs</div>`;D.cats.forEach(cat=>{const ds=cat.drugs.filter(d=>sel.has(d.id));if(!ds.length)return;const bg=cat.color||DCC,tc=tcf(bg);h+=`<div class="pc2" style="background:${bg}"><div class="pcn" style="color:${tc};border-bottom:2px solid ${dk(bg,0.15)}">${esc(cat.name)}</div>${ds.map(d=>`<div class="pdr"><span class="pdn" style="color:${tc}">${esc(d.name)}</span><span class="pdd" style="color:${tc};opacity:0.7"> — ${esc(d.dil)}</span></div>`).join('')}</div>`;});}if(he){h+=`<div class="psh">🔧 Equipment</div>`;D.equip.forEach(cat=>{const its=cat.items.filter(i=>eqSel[i.id]&&eqSel[i.id].size>0);if(!its.length)return;const bg=cat.color||DCC,tc=tcf(bg);h+=`<div class="pc2" style="background:${bg}"><div class="pcn" style="color:${tc};border-bottom:2px solid ${dk(bg,0.15)}">${esc(cat.name)}</div>${its.map(i=>`<div class="pdr"><span class="pdn" style="color:${tc}">${esc(i.name)}</span><span class="pdd" style="color:${tc};opacity:0.7"> — ${[...eqSel[i.id]].join(', ')}</span></div>`).join('')}</div>`;});}src.innerHTML=h;html2canvas(src,{scale:2,backgroundColor:'#fff',useCORS:true,logging:false,width:380,windowWidth:380}).then(cv=>{document.getElementById('pimg').src=cv.toDataURL('image/png');document.getElementById('ipo').classList.add('act');src.innerHTML='';}).catch(()=>{alert('Image generation failed.');src.innerHTML='';});}
 function cImg(){document.getElementById('ipo').classList.remove('act');}
 function dlImg(){const a=document.createElement('a');a.download='cardiac-drugs-equipment.png';a.href=document.getElementById('pimg').src;a.click();}
 
